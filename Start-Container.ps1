@@ -10,7 +10,7 @@ $ssh_portassign = ($id+43820).ToString()
 
 Write-Host "Starting Container $id"
 
-$container_id = $(docker run -itd --name ece438-$id --hostname ece438-$id -p ${ssh_portassign}:22 -v $pwd/repo:/repo metricvoid/ece438:20210827.b1)
+$container_id = $(docker run -itd --name ece438-$id --hostname ece438-$id -p ${ssh_portassign}:22 -v $pwd/repo:/repo metricvoid/ece438:20210919.b0)
 
 $container_ip = $(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $container_id)
 
